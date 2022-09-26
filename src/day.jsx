@@ -239,10 +239,13 @@ export default class Day extends React.Component {
     const dayClassName = this.props.dayClassName
       ? this.props.dayClassName(date)
       : undefined;
+    const selectedDayClassName = this.props.selectedDayClassName
+    ? this.props.selectedDayClassName(date)
+    : undefined;
     return classnames(
       "react-datepicker__day",
       dayClassName,
-      this.isSelected() ? this.props.selectedDayClassName : undefined,
+      selectedDayClassName,
       "react-datepicker__day--" + getDayOfWeekCode(this.props.day),
       {
         "react-datepicker__day--disabled": this.isDisabled(),
